@@ -3,10 +3,7 @@
 <?php get_header();?>
 
 <?php if(have_posts()) :?>
-
-
         <?php while (have_posts()) : the_post(); ?>
-
         <div class="apropos">
                 <h1 class="apropos-title"><?php the_title() ;?></h1>
                 <div class="apropos-rens">

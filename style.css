@@ -15,6 +15,8 @@ body{
 
 .current_page_item{
     background-color: #B48489;
+    height: 80px;
+    align-items: center;
 }
 
 header{
@@ -29,41 +31,76 @@ header{
 
 header img{
     position: relative;
-    left: -80px;
+    left: -40px;
     width: 80px;
     height: 75px;
     transition: 1s;
 }
 
-header nav div ul{
+.header-menu nav div ul{
     display: flex;
     list-style-type: none;
+     position: relative;
+    align-items: center;
 }
 
-header nav div ul li{
+.header-menu nav div ul li{
     list-style-type: none;
-    display:block;
+    position: relative;
     font-family: "Playfair display", serif;
+    display: flex;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-header nav div ul li a{
+
+.header-menu nav div ul li a{
     font-size: 1.2em;
     text-decoration: none;
     color:#000;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    text-transform: capitalize;
+    transition: background-color .2s, color .2s;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
-.header-menu ul li{
-    padding: 1.8rem 1rem;
+.header-menu nav div ul li ul{
+    align-items: center;
+    display: none;
+    position: absolute;
+    height: auto;
+    margin-top: 80px;
+    background-color: #d39aa1;
+    margin-left: 20px;
+    padding-left: 0px;
+    transition: 1s;
 }
 
-.header-menu ul li:hover{
+.header-menu nav div ul li ul li{
+    height: 50px;
+}
+
+.header-menu nav div ul li ul li a {
+    align-items: center;
+    color: #000;
+    display: flex;
+    width: 150px;
+    height: 100%;
+    padding: 0;
+}
+
+header nav div ul li:hover ul{
+    display:block;
+}
+
+.header-menu nav div ul li:hover{
     background-color: #B48489;
     color: #fff;
 }
 
-.header-menu ul li a:hover{
+.header-menu nav div ul li a:hover{
     color: #fff;
 }
 
@@ -75,241 +112,6 @@ header nav div ul li a{
     margin-left: 50px;
 }
 
-.header-menu-sociaux nav div ul li{
-    border: 1px solid #000;
-    background-color: #fff;
-    background-size: 100px;
-    border-radius: 50px;
-    color: #3C3C3C;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    width: 50px;
-    margin: 5px;
-}
-
-.header-menu-sociaux ul li a{
-    display:none;
-}
-
-.header nav div ul li a {
-    text-transform: capitalize;
-    color: #333;
-    transition: background-color .2s, color .2s;
-}
-
-.header nav div ul li a:focus {
-    background-color: #333;
-    color: #fff;
-}
-
-
-.header nav div ul li.active > a {
-    background-color: #333;
-    color: #fff;
-}
-
-/*========RESPONSIVE HEADER=======*/
-@media (min-width: 200px){
-    .header-menu-sociaux{
-        display: none;
-    }
-    .header-menu{
-        display:none;
-    }
-    header img{
-        display: none;
-    }
-    .toggle_btn {
-        display: flex;
-    }
-    header.nav{
-        flex-flow: column;
-    }
-    header.nav img{
-        display: flex;
-        left: 0;
-        transition: 1s;
-    }
-    header.nav .header-menu {
-        height: 80px;
-        display: flex;
-    }
-    header.nav .header-menu nav div ul{
-        margin: 0;
-        padding-left: 0;
-    }
-    header.nav .header-menu-sociaux {
-        display: flex;
-        margin-left: 0;
-    }
-    header.nav .header-menu-sociaux nav div ul {
-        padding-left: 0;
-    }
-}
-
-@media (min-width: 576px){
-    .header-menu{
-        display:none;
-    }
-
-    .header-menu-sociaux{
-        display: none;
-    }
-    header img{
-        display: none;
-    }
-    .toggle_btn {
-        display: flex;
-    }
-    header.nav{
-        flex-flow: column;
-    }
-    header.nav img{
-        display: flex;
-        left: 0;
-        transition: 1s;
-    }
-    header.nav .header-menu {
-        height: 80px;
-        display: flex;
-    }
-    header.nav .header-menu nav div ul{
-        margin: 0;
-        padding-left: 0;
-    }
-    header.nav .header-menu-sociaux {
-        display: flex;
-        margin-left: 0;
-    }
-    header.nav .header-menu-sociaux nav div ul {
-        padding-left: 0;
-    }
-
-}
-
-@media (min-width: 768px){
-    .header-menu-sociaux{
-        display: none;
-    }
-    .header-menu{
-        display: flex;
-    }
-    header img{
-        left: 20px;
-        display: none;
-    }
-    .toggle_btn{
-        display: flex;
-    }
-    header.nav{
-        flex-flow: column;
-    }
-    header.nav img{
-        display: flex;
-        left: 0;
-        transition: 1s;
-    }
-    header.nav header img{
-        display: flex;
-    }
-    header.nav .header-menu {
-        height: 80px;
-    }
-    header.nav .header-menu nav div ul{
-        margin: 0;
-        padding-left: 0;
-    }
-    header.nav .header-menu-sociaux {
-        display: flex;
-        margin-left: 0;
-    }
-    header.nav .header-menu-sociaux nav div ul {
-        padding-left: 0;
-    }
-}
-
-@media (min-width: 992px){
-
-    .header-menu-sociaux {
-        display: none;
-    }
-    .header-menu{
-        display: flex;
-    }
-    header img{
-        display: flex;
-    }
-    .toggle_btn{
-        display: flex;
-    }
-    header.nav{
-        flex-flow: column;
-    }
-    header.nav img{
-        display: flex;
-        left: 0;
-        transition: 1s;
-    }
-    header.nav .header-menu {
-        height: 80px;
-    }
-    header.nav .header-menu nav div ul{
-        margin: 0;
-        padding-left: 0;
-    }
-    header.nav .header-menu-sociaux {
-        display: flex;
-        margin-left: 0;
-    }
-    header.nav .header-menu-sociaux nav div ul {
-        padding-left: 0;
-    }
-
-}
-
-@media (min-width: 1200px){
-
-    .header-menu-sociaux{
-        display: flex;
-    }
-    .header-menu{
-        display:flex;
-    }
-    header img{
-        left: -80px;
-        display: block;
-    }
-    .toggle_btn{
-        display: none;
-    }
-    header.nav{
-        flex-flow: column;
-    }
-    header.nav img{
-        display: flex;
-        left: 0;
-        transition: 1s;
-    }
-    header.nav header img{
-        position: initial;
-    }
-    header.nav .header-menu {
-        height: 80px;
-    }
-    header.nav .header-menu nav div ul{
-        margin: 0;
-        padding-left: 0;
-    }
-    header.nav .header-menu-sociaux {
-        display: flex;
-        margin-left: 0;
-    }
-    header.nav .header-menu-sociaux nav div ul {
-        padding-left: 0;
-    }
-
-}
 
 /*=============YOGA===============*/
 .yoga-card1{
@@ -1501,6 +1303,91 @@ header nav div ul li a{
     font-weight: bold;
     margin-top: 10px;
 }
+
+/*===========PARCOURS===========*/
+
+.parcours{
+    display: flex;
+    margin-left: 60px;
+    margin-right: 60px;
+    flex-flow: column;
+}
+
+.parcours h1{
+    text-align: center;
+}
+
+.parcours15{
+   display: flex;
+   margin-top: 30px;
+   justify-content: space-around;
+    padding-bottom: 30px;
+   border-bottom: 5px solid #f2f2f2;
+}
+
+.parcours15-text{
+    width: 30em;
+}
+
+.parcours15-text h2{
+    text-align: center;
+}
+
+.parcours15-text img{
+    margin-top: 60px;
+    width: 30em;
+}
+
+.parcours15-image img{
+    width: 30em;
+}
+
+.parcours29{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+.parcours29-text{
+    width: 30em;
+}
+
+.parcours29-text h2{
+    text-align: center;
+}
+
+.parcours29-text img{
+    margin-top: 60px;
+    width: 30em;
+}
+
+.parcours29-image img{
+    width: 45em;
+}
+
+
+/*===========REGLEMENT===========*/
+
+.reglement{
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+}
+
+.reglement-text{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.reglement-text h2{
+    text-align: center;
+}
+
+.reglement-text h3{
+    margin-left: 2rem;
+}
+
 
 /*===========BURGER===========*/
 
