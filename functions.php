@@ -69,17 +69,17 @@ if ( function_exists('register_sidebar') )
 
 // Custom post type : Crée des realisations (ressemble plus ou moins à un article
 function create_post_type() {
-    register_post_type('realisations',
+    register_post_type('trail',
         array(
-            'label'                 => __('Réalisations'),
-            'singular_label'        => __('Réalisation'),
-            'add_new_item'          => __( 'Ajouter une réalisation' ),
-            'edit_item'             => __( 'Modifier une réalisation' ),
-            'new_item'              => __( 'Nouvelle réalisation' ),
-            'view_item'             => __( 'Voir la réalisation' ),
-            'search_items'          => __( 'Rechercher une réalisation' ),
-            'not_found'             =>  __( 'Aucune réalisation trouvée' ),
-            'not_found_in_trash'    => __( 'Aucune réalisation trouvée' ),
+            'label'                 => __('Trail'),
+            'singular_label'        => __('Trail'),
+            'add_new_item'          => __( 'Ajouter un trail' ),
+            'edit_item'             => __( 'Modifier un trail' ),
+            'new_item'              => __( 'Nouveau trail' ),
+            'view_item'             => __( 'Voir le trail' ),
+            'search_items'          => __( 'Rechercher un trail' ),
+            'not_found'             =>  __( 'Aucun trail trouvé' ),
+            'not_found_in_trash'    => __( 'Aucun trail trouvé' ),
             'public'                => true,
             'show_ui'               => true,
             'capability_type'       => 'post',
@@ -88,7 +88,7 @@ function create_post_type() {
             'menu_icon'             => 'dashicons-video-alt3',
             'taxonomies'            => array('types'),
             'supports'              => array( 'title', 'editor', 'thumbnail'),
-            'rewrite'               => array('slug' => 'realisation', 'with_front' => true)
+            'rewrite'               => array('slug' => 'trail', 'with_front' => true)
         )
     );
 }
@@ -97,13 +97,13 @@ add_action( 'init', 'create_post_type' );
 // Création de taxonomy (equivalent de categorie pour un article)
 function themes_taxonomy() {
     register_taxonomy(
-        'ville',
-        'realisations',
+        'annee',
+        'trail',
         array(
-            'label' => 'Ville',
+            'label' => 'annee',
             'query_var' => true,
             'rewrite' => array(
-                'slug' => 'ville',
+                'slug' => 'annee',
                 'with_front' => true
             ),
             'hierarchical' => true,

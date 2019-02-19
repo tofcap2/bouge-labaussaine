@@ -5,6 +5,9 @@
 <?php if(have_posts()) :?>
 <div class="contact">
     <?php while (have_posts()) : the_post(); ?>
+        <div class="contact-message">
+            <?php the_content() ;?>
+        </div>
         <div class="contact-telechargement">
             <?php  echo do_shortcode('[dg]');?>
         </div>

@@ -15,14 +15,13 @@
 
     <header class="header">
 
-            <img src="<?php echo bloginfo('template_url') ;?>/image/logo.jpg" alt="Logo" >
+        <img src="<?php echo bloginfo('template_url') ;?>/image/logo.jpg" alt="Logo" >
 
         <div class="header-menu">
             <nav><?php  wp_nav_menu(array('theme_location' => 'menu-principal'));?></nav>
         </div>
-        <div class="header-menu-sociaux">
-            <nav><?php  wp_nav_menu(array('theme_location' => 'menu-secondaire'));?></nav>
-        </div>
+
+        <a class="fab fa-facebook-f header-menu-sociaux" href=https://www.facebook.com/Bouge-%C3%A0-La-Baussaine-185020691839799/"></a>
 
         <div class="toggle_btn">
             <span></span>
